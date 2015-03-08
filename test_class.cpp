@@ -1,9 +1,9 @@
 /*
  =====================================================================================
-        Filename:  test_struct.cpp
-     	Description:  而是委托构造函数
+        Filename:  test_class.cpp
+     	Description:  测试常量成员函数
         Version:  1.0
-        Created:  04/03/15 16:13:27
+        Created:  04/03/15 17:19:16
         Revision:  none
         Compiler:  gcc
         Author:  Jeff (), zyfforlinux@163.com
@@ -12,22 +12,27 @@
  */
 
 #include <iostream>
-#include <string>
 
 using namespace std;
+
 class person
 {
-	public:
-		person(const string name,int age,bool sex):Name(name),Age(age),Sex(sex){}
-		person(const string name):person(name,22,false){} //委托构造函数
+public:
+	const person &print_const()const
+	{
+		cout << zhang << endl;
+		return *this;
+	}
+	void print()
+	{
+		cout << "test" << endl;
+	}
 	private:
-	const string Name;
-	int Age;
-	bool Sex;
+		int zhang = 4;
 };
 
 int main()
 {
-
-	person man("zhangyifei");
+	const person ab;
+	ab.print_const();
 }
