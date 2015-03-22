@@ -52,5 +52,6 @@ int main()
 	ideq.insert(it,4,100);
 	ideq.erase(it-1);
 	for_each(ideq.begin(),ideq.end(),[](int data){cout << data <<endl;});
+	ideq[1] = 5;
 }
 
